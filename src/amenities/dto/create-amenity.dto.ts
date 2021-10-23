@@ -1,1 +1,5 @@
-export class CreateAmenityDto {}
+export class CreateAmenityDto {
+    id: number;
+    project: number;
+    name: string;
+}

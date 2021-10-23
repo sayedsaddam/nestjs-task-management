@@ -12,5 +12,6 @@ datasource db {
 
 model Amenities {
   id  Int @default(autoincrement()) @id
+  project Int
   name  String
 }

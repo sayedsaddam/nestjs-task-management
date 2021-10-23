@@ -18,17 +18,17 @@ export class AmenitiesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.amenitiesService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.amenitiesService.findOne({ id: +id });
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateAmenityDto: UpdateAmenityDto) {
-    return this.amenitiesService.update(+id, updateAmenityDto);
+    return this.amenitiesService.update({ id: +id }, updateAmenityDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.amenitiesService.remove(+id);
+    return this.amenitiesService.remove({ id: +id });
   }
 }
