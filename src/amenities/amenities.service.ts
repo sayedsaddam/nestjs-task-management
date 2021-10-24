@@ -1,8 +1,6 @@
 import { Prisma } from '.prisma/client';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
-import { CreateAmenityDto } from './dto/create-amenity.dto';
-import { UpdateAmenityDto } from './dto/update-amenity.dto';
 
 @Injectable()
 export class AmenitiesService {
@@ -18,7 +16,7 @@ export class AmenitiesService {
   }
 
 
-  findOne(amenityWhereUniqueInput: Prisma.AmenitiesWhereUniqueInput) { // it's not working properly.
+  findOne(amenityWhereUniqueInput: Prisma.AmenitiesWhereUniqueInput) {
     return this.prisma.amenities.findUnique({
       where: amenityWhereUniqueInput,
     });
